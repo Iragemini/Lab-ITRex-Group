@@ -13,15 +13,15 @@ function setAllSettings(num) {
   setStability(num);
 }
 function beginner() {
-  console.log("Beginner settings: ")
+  console.log('Beginner settings: ');
   setAllSettings(5);
 }
 function goodDriver() {
-  console.log("Good Driver settings: ")
+  console.log('Good Driver settings: ');
   setAllSettings(3);
 }
 function maniac() {
-  console.log("Maniac settings: ")
+  console.log('Maniac settings: ');
   setAllSettings(1);
 }
 
