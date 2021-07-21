@@ -28,10 +28,10 @@ function randomLevel(min, max) {
   return Math.floor(rand);
 }
 function getMax(obj) {
-  return Math.max.apply(null, Object.keys(obj));
+  return Math.max(...Object.keys(obj));
 }
 function getMin(obj) {
-  return Math.min.apply(null, Object.keys(obj));
+  return Math.min(...Object.keys(obj));
 }
 class Game {
   constructor(params) {
