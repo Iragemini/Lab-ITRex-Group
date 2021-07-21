@@ -43,21 +43,21 @@ class Game {
   }
 
   start() {
-    if (this.level) {
-      if (this.level === 'maniac') {
+    switch (this.level) {
+      case 'maniac':
         this.maniac();
-      }
-      if (this.level === 'goodDriver') {
+        break;
+      case 'goodDriver':
         this.goodDriver();
-      }
-      if (this.level === 'beginner') {
+        break;
+      case 'beginner':
         this.beginner();
-      }
-      return;
+        break;
+      default:
+        this.car.setABS(this.abs);
+        this.car.setTraction(this.traction);
+        this.car.setStability(this.stability);
     }
-    this.car.setABS(this.abs);
-    this.car.setTraction(this.traction);
-    this.car.setStability(this.stability);
   }
 
   beginner() {
