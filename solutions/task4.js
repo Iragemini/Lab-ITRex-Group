@@ -1,5 +1,5 @@
 function genMagicSquare(n) {
-  if (!n || n % 2 === 0) {
+  if (!n || n < 0 || n % 2 === 0) {
     throw new Error(`Impossible value: ${n}. Enter an odd number more than 0`);
   }
   const matrix = [];
