@@ -26,12 +26,12 @@ function genMagicSquare(n) {
   }
   return matrix;
 }
-function init() {
+function init(n) {
   try {
-    console.log('magic square', genMagicSquare(7));
+    console.log('magic square', genMagicSquare(n));
   } catch (e) {
     console.log(e);
   }
 }
 
-init();
+init(7);
