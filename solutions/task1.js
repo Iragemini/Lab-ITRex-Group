@@ -1,4 +1,3 @@
-console.time('lightBulbs()');
 function lightBulbs(n, p) {
   const bulbs = new Array(n);
   bulbs.fill(false);
@@ -18,6 +17,6 @@ function lightBulbs(n, p) {
   const amount = bulbs.reduce((acc, item) => (item ? acc + 1 : acc), 0);
   return amount;
 }
-console.timeEnd('lightBulbs()');
+
 console.log('bulbs', lightBulbs(20, [2, 3, 8, 33]));
 console.log('bulbs', lightBulbs(172, [19, 2, 7, 13, 40, 23, 16, 1, 45, 9]));
