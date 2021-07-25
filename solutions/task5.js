@@ -1,3 +1,8 @@
+/**
+ * @param {number[]} n - array of people weights
+ * @param {number} d - carrying capacity of the kayak
+ * @returns number - amount of kayaks
+ */
 function findKayakAmount(n, d) {
   const kayaks = [];
 

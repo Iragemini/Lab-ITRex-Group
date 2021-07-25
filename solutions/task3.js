@@ -1,3 +1,9 @@
+/**
+ * @param {number} n - amount of copies
+ * @param {number} x - coping speed for 1 copier
+ * @param {number} y - coping speed for 2 copier
+ * @returns number - amount of seconds needed to do the job
+ */
 function copy(n, x, y) {
   if (!n) {
     throw new Error('Incorrect input data');

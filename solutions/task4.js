@@ -1,3 +1,7 @@
+/**
+ * @param {number} n
+ * @returns number[][]
+ */
 function genMagicSquare(n) {
   if (!n || n < 0 || n % 2 === 0) {
     throw new Error(`Impossible value: ${n}. Enter an odd number more than 0`);

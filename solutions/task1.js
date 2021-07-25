@@ -1,3 +1,8 @@
+/**
+ * @param {number} n - amount of bulbs
+ * @param {number[]} p - array of P's
+ * @returns number - amount of burning light bulb
+ */
 function lightBulbs(n, p) {
   const bulbs = new Array(n);
   bulbs.fill(false);

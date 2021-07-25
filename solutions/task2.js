@@ -1,3 +1,8 @@
+/**
+ * @param {number[]} pages - array with amount of pages for any chapter
+ * @param {number} k - amount of tomes
+ * @returns number - amount of pages in the most biggest one
+ */
 function generateVolumes(pages, k) {
   const len = pages.length;
   if (k > len || k <= 0) {
