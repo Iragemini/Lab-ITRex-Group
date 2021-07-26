@@ -4,14 +4,15 @@
  * @returns number - amount of pages in the most biggest one
  */
 function generateVolumes(pages, k) {
-  const len = pages.length;
-  if (k > len || k <= 0) {
+  if (k > pages.length || k <= 0) {
     throw new Error('Incorrect input data.');
   }
   let amountOfPages = pages.reduce((acc, item) => acc + item);
   let maxPages = Math.max(...pages) - 1;
 
-  if (k === 1) return amountOfPages;
+  if (k === 1) {
+    return amountOfPages;
+  }
 
   while (maxPages + 1 < amountOfPages) {
     const mid = Math.floor((maxPages + amountOfPages) / 2);

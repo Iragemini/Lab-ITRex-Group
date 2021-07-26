@@ -7,20 +7,17 @@ function lightBulbs(n, p) {
   const bulbs = new Array(n);
   bulbs.fill(false);
   const filtered = p.filter((item) => item <= n);
-  const inversion = (index) => {
-    bulbs[index] = !bulbs[index];
-  };
-  const len = filtered.length;
-  for (let i = 0; i < len; i += 1) {
-    bulbs.forEach((item, index) => {
-      const num = index + 1;
+
+  for (let i = 0; i < filtered.length; i += 1) {
+    for (let j = 0; j < bulbs.length; j += 1) {
+      const num = j + 1;
       if (num % filtered[i] === 0) {
-        inversion(index);
+        bulbs[j] = !bulbs[j];
       }
-    });
+    }
   }
-  const amount = bulbs.reduce((acc, item) => (item ? acc + 1 : acc), 0);
-  return amount;
+
+  return bulbs.filter((item) => item).length;
 }
 
 console.log('bulbs', lightBulbs(20, [2, 3, 8, 33]));

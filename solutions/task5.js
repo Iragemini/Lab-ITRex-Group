@@ -6,14 +6,11 @@
 function findKayakAmount(n, d) {
   const kayaks = [];
 
-  const filteredWeight = n.filter((item, index) => {
-    if (item > d) {
-      console.log(`Human ${index + 1}, sorry, you can't go camping, your weight is more than ${d}.`);
-      return false;
-    }
-    return item;
-  });
-  filteredWeight.sort((a, b) => b - a);
+  const filteredWeight = n.filter((item) => item <= d).sort((a, b) => b - a);
+
+  if (n.length > filteredWeight.length) {
+    console.log(`${n.length - filteredWeight.length} people can't go camping.`);
+  }
 
   const weight = filteredWeight.reduce((acc, item) => acc + item, 0);
   if (weight <= d && filteredWeight.length <= 2) {
