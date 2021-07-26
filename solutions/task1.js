@@ -1,3 +1,4 @@
+const benchmark = require('../utils/benchmark');
 /**
  * @param {number} n - amount of bulbs
  * @param {number[]} p - array of P's
@@ -20,5 +21,6 @@ function lightBulbs(n, p) {
   return bulbs.filter((item) => item).length;
 }
 
-console.log('bulbs', lightBulbs(20, [2, 3, 8, 33]));
-console.log('bulbs', lightBulbs(172, [19, 2, 7, 13, 40, 23, 16, 1, 45, 9]));
+// console.log('bulbs', lightBulbs(20, [2, 3, 8, 33]));
+// console.log('bulbs', lightBulbs(172, [19, 2, 7, 13, 40, 23, 16, 1, 45, 9]));
+console.log(benchmark(() => lightBulbs(20, [2, 3, 8, 33])));
