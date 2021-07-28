@@ -17,21 +17,23 @@ class User {
       for (let i = 0; i < results.length; i += 1) {
         const {
           gender,
-          name,
+          name: {
+            title, first, last,
+          },
           dob,
-          login,
-          location,
+          login: {
+            username, password,
+          },
+          location: {
+            country,
+            state,
+            city,
+            street,
+          },
           email,
           phone,
         } = results[i];
-        const {
-          country,
-          state,
-          city,
-          street,
-        } = location;
-        const { username, password } = login;
-        console.log(`${i + 1}) ${name.title} ${name.first} ${name.last}, ${dob.age} y.o.`);
+        console.log(`${i + 1}) ${title} ${first} ${last}, ${dob.age} y.o.`);
         console.log(`Gender: ${gender}`);
         console.log(`Login information: username: ${username}, psw: ${password}`);
         console.log(`Address: ${country}, ${state}, ${city}, ${street.name}-${street.number}`);

@@ -1,5 +1,5 @@
 class StringFormatter {
-  constructor(str) {
+  constructor(str = '') {
     this.str = str;
   }
 

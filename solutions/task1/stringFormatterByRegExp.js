@@ -1,15 +1,13 @@
 const StringFormatter = require('./stringFormatter');
 
 class StringFormatterByRegExp extends StringFormatter {
-  constructor(str) {
+  constructor(str, subStr = '') {
     super(str);
-    this.str = str;
-    this.subStr = 'world';
+    this.subStr = subStr;
   }
 
   removeNonUniqueChars() {
-    const pattern = `${this.subStr}`;
-    const regexp = new RegExp(pattern, 'ig');
+    const regexp = new RegExp(this.subStr, 'ig');
     return this.str.replace(regexp, '');
   }
 }

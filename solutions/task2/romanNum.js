@@ -1,24 +1,20 @@
 const MathOperations = require('./mathOperations');
-const config = require('./config').ROMAN_TABLE;
+const symbolsMap = require('./symbolsMap').ROMAN_TABLE;
 
 class RomanNum extends MathOperations {
-  constructor(num1, num2, sign) {
-    super(num1, num2, sign);
-    this.num1 = num1;
-    this.num2 = num2;
-    this.sign = sign;
-  }
-
   convertToRoman(num) {
+    let converted = '';
     if (num === 0) {
       return '';
     }
-    for (let i = 0; i < config.length; i += 1) {
-      if (num >= config[i][0]) {
-        return config[i][1] + this.convertToRoman(num - config[i][0]);
+    for (let i = 0; i < symbolsMap.length; i += 1) {
+      const [arabNum, romNum] = symbolsMap[i];
+      if (num >= arabNum) {
+        converted = romNum + this.convertToRoman(num - arabNum);
+        break;
       }
     }
-    return '';
+    return converted;
   }
 
   result() {

@@ -25,26 +25,23 @@ class MathOperations {
   }
 
   calculate() {
-    let res = 'Operation not specified';
-    try {
-      switch (this.sign) {
-        case '+':
-          res = this.sum();
-          break;
-        case '-':
-          res = this.sub();
-          break;
-        case '*':
-          res = this.mul();
-          break;
-        case '/':
-          res = this.div();
-          break;
-        default:
-          break;
-      }
-    } catch (e) {
-      console.log(e);
+    let res = '';
+    switch (this.sign) {
+      case '+':
+        res = this.sum();
+        break;
+      case '-':
+        res = this.sub();
+        break;
+      case '*':
+        res = this.mul();
+        break;
+      case '/':
+        res = this.div();
+        break;
+      default:
+        res = 'Operation not specified';
+        break;
     }
     return res;
   }
