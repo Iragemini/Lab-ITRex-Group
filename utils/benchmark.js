@@ -1,4 +1,4 @@
-const COUNT = 10000;
+const COUNT = 1_000_000;
 
 const benchmark = (fn) => {
   const begin = process.hrtime.bigint();
